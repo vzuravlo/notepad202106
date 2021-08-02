@@ -33,8 +33,20 @@ public class Main {
     }
 
     private static void createRecord() {
-        notepad.createRecord();
+        var recordType = InputUtils.askString("Enter record type");
+        switch (recordType) {
+            case "person":
+                notepad.createPerson();
+                break;
+            case "book":
+                notepad.createBook();
+                break;
+            default:
+                System.out.println("Unknown type");
+                return;
+        }
         System.out.println("created");
+
     }
 
     private static void showHelp() {
