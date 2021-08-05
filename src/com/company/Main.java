@@ -33,20 +33,16 @@ public class Main {
     }
 
     private static void createRecord() {
-        var recordType = InputUtils.askString("Enter record type");
-        switch (recordType) {
-            case "person":
-                notepad.createPerson();
-                break;
-            case "book":
-                notepad.createBook();
-                break;
-            default:
-                System.out.println("Unknown type");
-                return;
+        System.out.println("Supported types:");
+        for(var t : RecordType.values()) {
+            System.out.println("   " + t);
         }
-        System.out.println("created");
+        var strType = InputUtils.askString("Enter record type");
+        var type = RecordType.valueOf(strType);
 
+        notepad.createRecord(type);
+
+        System.out.println("created");
     }
 
     private static void showHelp() {

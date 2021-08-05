@@ -36,4 +36,11 @@ public class Book extends Record {
                 ", author='" + author + '\'' +
                 ", isbn='" + isbn + '\'';
     }
+
+    @Override
+    public void askData() {
+        title = InputUtils.askString("Title");
+        author = InputUtils.askString("Author");
+        isbn = InputUtils.askString("ISBN");
+    }
 }

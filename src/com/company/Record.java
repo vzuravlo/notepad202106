@@ -18,4 +18,6 @@ public abstract class Record {
         return "(" + id + ")";
     }
 
+    public abstract void askData();
+
 }
