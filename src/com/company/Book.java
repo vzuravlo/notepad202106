@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Locale;
+
 public class Book extends Record {
     private String title;
     private String author;
@@ -42,5 +44,12 @@ public class Book extends Record {
         title = InputUtils.askString("Title");
         author = InputUtils.askString("Author");
         isbn = InputUtils.askString("ISBN");
+    }
+
+    public boolean contains(String substr) {
+        return super.contains(substr)
+                || title.contains(substr)
+                || author.contains(substr)
+                || isbn.contains(substr);
     }
 }

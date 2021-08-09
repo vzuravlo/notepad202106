@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Locale;
+
 public class Person extends Record {
     private String firstName;
     private String lastName;
@@ -44,4 +46,11 @@ public class Person extends Record {
         email = InputUtils.askString("Email");
     }
 
+    @Override
+    public boolean contains(String substr) {
+        return super.contains(substr)
+                || firstName.toLowerCase().contains(substr)
+                || lastName.toLowerCase().contains(substr)
+                || email.toLowerCase().contains(substr);
+    }
 }

@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Notepad {
     private final List<Record> records = new ArrayList<>();
@@ -18,4 +19,39 @@ public class Notepad {
             System.out.println(r);
         }
     }
+
+//    public void delete(int id) {
+//        for (int i = 0; i < records.size(); i++) {
+//            var rec = records.get(i);
+//            if (rec.getId() == id) {
+//                records.remove(i);
+//                return;
+//            }
+//        }
+//        System.out.println("Not found");
+//    }
+
+    public void delete(int id) {
+        var removed = records.removeIf(r -> r.getId() == id);
+        if (!removed) {
+            System.out.println("Not found");
+        }
+    }
+
+    public void find(String substr) {
+        var tmp = substr.toLowerCase();
+        for (Record rec : records) {
+            if (rec.contains(tmp)) {
+                System.out.println(rec);
+            }
+        }
+    }
 }
+/*
+create BOOK John Smith 123456
+create PERSON Mike Johnson mike@mike.com
+create ALARM text 1212
+create PERSON Mike1 KKKKKK dfsfsdf
+create PERSON Mike9 XXXX dfsfsdf
+
+*/

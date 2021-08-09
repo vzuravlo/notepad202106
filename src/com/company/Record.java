@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Locale;
+
 public abstract class Record {
     private static int counter = 0;
     private int id;
@@ -19,5 +21,9 @@ public abstract class Record {
     }
 
     public abstract void askData();
+
+    public boolean contains(String substr) {
+        return String.valueOf(id).contains(substr);
+    }
 
 }

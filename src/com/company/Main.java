@@ -1,5 +1,11 @@
 package com.company;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
+
 public class Main {
     private static final Notepad notepad = new Notepad();
 
@@ -19,13 +25,32 @@ public class Main {
                     createRecord();
                     break;
                 case "list":
+                case "ls":
                     listRecords();
+                    break;
+                case "delete":
+                case "del":
+                    deleteRecord();
+                    break;
+                case "find":
+                case "search":
+                    findRecord();
                     break;
                 default:
                     System.out.println("Unknown command");
             }
         }
         System.out.println("Good bye");
+    }
+
+    private static void findRecord() {
+        var substr = InputUtils.askString("What to find?");
+        notepad.find(substr);
+    }
+
+    private static void deleteRecord() {
+        var id = InputUtils.askNumber("Enter record ID to delete", 1, Integer.MAX_VALUE);
+        notepad.delete(id);
     }
 
     private static void listRecords() {
