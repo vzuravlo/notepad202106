@@ -12,17 +12,20 @@ public abstract class Record {
     }
 
     public int getId() {
+
         return id;
     }
 
     @Override
     public String toString() {
+
         return "(" + id + ")";
     }
 
     public abstract void askData();
 
     public boolean contains(String substr) {
+
         return String.valueOf(id).contains(substr);
     }
 

@@ -30,4 +30,40 @@ public class InputUtils {
         return scanner.next();
     }
 
+    public static boolean askYesNo(String arg) {
+
+        String answer;
+        boolean keyExit;
+        boolean ret = true;
+        System.out.println(arg);
+
+        do {
+            Scanner in = new Scanner(System.in);
+            answer = in.next();
+
+            switch (answer) {
+                case "Y":
+                case "y": {
+                    ret = true;
+                    keyExit = false;
+                    break;
+                }
+                case "N":
+                case "n": {
+                    ret = false;
+                    keyExit = false;
+                    break;
+                }
+                default: {
+                    System.out.println("Incorrect answer. Enter y or n.");
+                    keyExit = true;
+                }
+            }
+        }
+        while (keyExit);
+        return ret;
+
+
+    }
+
 }
