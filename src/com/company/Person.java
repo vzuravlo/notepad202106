@@ -6,6 +6,7 @@ public class Person extends Record {
     private String firstName;
     private String lastName;
     private String gender;
+    private int age;
     private String email;
     private String phone;
 
@@ -47,6 +48,14 @@ public class Person extends Record {
         this.gender = gender;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -61,6 +70,7 @@ public class Person extends Record {
         return tmp + ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gender='" + gender + '\'' +
+                ", age='" + age + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'';
     }
@@ -70,9 +80,11 @@ public class Person extends Record {
         firstName = InputUtils.askString("First name");
         lastName = InputUtils.askString("Last name");
         gender = InputUtils.askString("Gender");
+        age = InputUtils.askNumber("Age", 5, 100);
         email = InputUtils.askString("Email");
         phone = InputUtils.askString("Phone");
     }
+
 
     @Override
     public boolean contains(String substr) {
@@ -80,6 +92,7 @@ public class Person extends Record {
                 || firstName.toLowerCase().contains(substr)
                 || lastName.toLowerCase().contains(substr)
                 || gender.toLowerCase().contains(substr)
+                || Integer.toString(age).contains(substr)
                 || email.toLowerCase().contains(substr)
                 || phone.toLowerCase().contains(substr);
     }
