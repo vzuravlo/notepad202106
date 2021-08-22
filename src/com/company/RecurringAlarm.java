@@ -22,4 +22,10 @@ public class RecurringAlarm extends StickyNote {
         super.askData();
         time = InputUtils.askString("Time");
     }
+    
+    public boolean contains(String substr) {
+        return super.contains(substr)
+                || time.contains(substr);
+    }
+    
 }

@@ -21,4 +21,10 @@ public class StickyNote extends Record {
     public void askData() {
         text = InputUtils.askString("Text");
     }
+    
+    public boolean contains(String substr) {
+        return super.contains(substr)
+                || text.contains(substr);
+    }
+    
 }
