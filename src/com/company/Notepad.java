@@ -49,9 +49,9 @@ public class Notepad {
 }
 /*
 create BOOK John Smith 123456
-create PERSON Mike Johnson mike@mike.com
+create PERSON Mike Johnson male 23 mike@mike.com 34534535454
 create ALARM text 1212
-create PERSON Mike1 KKKKKK dfsfsdf
-create PERSON Mike9 XXXX dfsfsdf
+create PERSON Mike1 KKKKKK male 45 werwer@fghfgh 3434534
+create PERSON Mike9 XXXX female 43 dfg 345345345
 
 */

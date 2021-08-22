@@ -30,40 +30,57 @@ public class InputUtils {
         return scanner.next();
     }
 
-    public static boolean askYesNo(String arg) {
+//    public static boolean askYesNo(String arg) {
+//
+//        String answer;
+//        boolean keyExit;
+//        boolean ret = true;
+//        System.out.println(arg);
+//
+//        do {
+//            Scanner in = new Scanner(System.in);
+//            answer = in.next();
+//
+//            switch (answer) {
+//                case "Y":
+//                case "y": {
+//                    ret = true;
+//                    keyExit = false;
+//                    break;
+//                }
+//                case "N":
+//                case "n": {
+//                    ret = false;
+//                    keyExit = false;
+//                    break;
+//                }
+//                default: {
+//                    System.out.println("Incorrect answer. Enter y or n.");
+//                    keyExit = true;
+//                }
+//            }
+//        }
+//        while (keyExit);
+//        return ret;
+//
+//
+//    }
 
-        String answer;
-        boolean keyExit;
-        boolean ret = true;
-        System.out.println(arg);
-
-        do {
-            Scanner in = new Scanner(System.in);
-            answer = in.next();
+    public static boolean askYesNo(String msg) {
+        while (true) {
+            System.out.println(msg + " (y/n)");
+            var answer = scanner.next().toLowerCase();
 
             switch (answer) {
-                case "Y":
-                case "y": {
-                    ret = true;
-                    keyExit = false;
-                    break;
-                }
-                case "N":
-                case "n": {
-                    ret = false;
-                    keyExit = false;
-                    break;
-                }
-                default: {
-                    System.out.println("Incorrect answer. Enter y or n.");
-                    keyExit = true;
-                }
+                case "y":
+                    return true;
+                case "n":
+                    return false;
             }
+
+            System.out.println("Incorrect answer. Enter y or n.");
         }
-        while (keyExit);
-        return ret;
-
-
     }
+
 
 }

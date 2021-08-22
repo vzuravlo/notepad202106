@@ -10,4 +10,17 @@ public class Reminder extends  RecurringAlarm{
     public void setDate(String date) {
         this.date = date;
     }
+    
+    @Override
+    public String toString() {
+        var tmp = super.toString();
+        return tmp + ", date='" + date + '\'';
+    }
+    
+    @Override
+    public void askData() {
+        super.askData();
+        date = InputUtils.askString("Date");
+    }
+    
 }
