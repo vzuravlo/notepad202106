@@ -22,7 +22,7 @@ public class Main {
                     break;
                 case "h":
                 case "help":
-                    showHelp(0);
+                    Help.showHelp(0);
                     break;
                 case "c":
                 case "create":
@@ -64,38 +64,40 @@ public class Main {
 
     private static void createRecord() {
 
-        showHelp(1);
+        Help.showHelp(1);
 
-        var strType = InputUtils.askString("Enter record type");
-        var type = RecordType.valueOf(strType);
+        String strType = InputUtils.askString("Enter record type");
+        RecordType type = RecordType.findByName(strType);
+        
 
         notepad.createRecord(type);
 
         System.out.println("created");
     }
 
-    private static void showHelp(int helpNumber) {
-        switch (helpNumber) {
-            case 0:
-                String helpMessage = """
-                        "h" or "help" this help
-                        "c" or "create" for create new record
-                        "l" or "list" for list of records
-                        "del" or "delete" for delete record
-                        "s" or "search" for search record
-                        "exit" Bye!     
-                        """;
-                System.out.println(helpMessage);
-
-                break;
-            case 1:
-                System.out.println("Supported types:");
-                for (var t : RecordType.values()) {
-                    System.out.println("   " + t);
-                }
-                break;
-
-        }
-
-    }
+//    private static void showHelp(int helpNumber) {
+//        switch (helpNumber) {
+//            case 0:
+//                String helpMessage = """
+//                        "h" or "help" this help
+//                        "c" or "create" for create new record
+//                        "l" or "list" for list of records
+//                        "del" or "delete" for delete record
+//                        "s" or "search" for search record
+//                        "exit" Bye!
+//                        """;
+//                System.out.println(helpMessage);
+//
+//                break;
+//            case 1:
+//                System.out.println("Supported types:");
+//                for (var t : RecordType.values()) {
+//                    System.out.println("   " + t);
+//                }
+//                break;
+//
+//
+//        }
+//
+//    }
 }

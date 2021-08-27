@@ -26,7 +26,7 @@ public class InputUtils {
     }
 
     public static String askString(String message) {
-        System.out.println(message + ":");
+        System.out.println(message);
         return scanner.next();
     }
 
