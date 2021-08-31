@@ -54,9 +54,9 @@ public class Book extends Record {
 
     public boolean contains(String substr) {
         return super.contains(substr)
-                || title.contains(substr)
-                || author.contains(substr)
-                || isbn.contains(substr);
+                || title.toLowerCase().contains(substr)
+                || author.toLowerCase().contains(substr)
+                || isbn.toLowerCase().contains(substr);
     }
 
 

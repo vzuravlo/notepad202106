@@ -43,8 +43,8 @@ public class Pet extends Record {
     
     public boolean contains(String substr) {
         return super.contains(substr)
-                || name.contains(substr)
-//                || species.valueOf().contains(substr)
+                || name.toLowerCase().contains(substr)
+                || species.toString().toLowerCase().contains(substr)
                 ;
     }
     

@@ -40,6 +40,14 @@ public class Main {
                 case "search":
                     findRecord();
                     break;
+                case "w":
+                case "write":
+                    writeFile();
+                    break;
+                case "r":
+                case "read":
+                    readFile();
+                    break;
                 default:
                     System.out.println("Unknown command");
             }
@@ -74,30 +82,15 @@ public class Main {
 
         System.out.println("created");
     }
+    
+    private static void writeFile() {
+        notepad.writeFile();
+    
+    }
+    
+    private static void readFile() {
+        notepad.readFile();
+    
+    }
 
-//    private static void showHelp(int helpNumber) {
-//        switch (helpNumber) {
-//            case 0:
-//                String helpMessage = """
-//                        "h" or "help" this help
-//                        "c" or "create" for create new record
-//                        "l" or "list" for list of records
-//                        "del" or "delete" for delete record
-//                        "s" or "search" for search record
-//                        "exit" Bye!
-//                        """;
-//                System.out.println(helpMessage);
-//
-//                break;
-//            case 1:
-//                System.out.println("Supported types:");
-//                for (var t : RecordType.values()) {
-//                    System.out.println("   " + t);
-//                }
-//                break;
-//
-//
-//        }
-//
-//    }
 }

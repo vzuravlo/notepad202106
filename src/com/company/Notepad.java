@@ -19,6 +19,14 @@ public class Notepad {
             System.out.println(r);
         }
     }
+    
+    public void readFile() {
+    
+    }
+    
+    public void writeFile() {
+    
+    }
 
 //    public void delete(int id) {
 //        for (int i = 0; i < records.size(); i++) {

@@ -10,6 +10,8 @@ public class Help {
                         "l" or "list" for list of records
                         "del" or "delete" for delete record
                         "s" or "search" for search record
+                        "r" or "read" read file
+                        "w" or "write" write to file
                         "exit" Bye!
                         """;
                 System.out.println(helpMessage);
