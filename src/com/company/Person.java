@@ -1,12 +1,13 @@
 package com.company;
 
+import java.time.LocalDate;
 import java.util.Locale;
 
 public class Person extends Record {
     private String firstName;
     private String lastName;
     private String gender;
-    private int age;
+    private LocalDate birthDay;
     private String email;
     private String phone;
     
@@ -48,13 +49,14 @@ public class Person extends Record {
         this.gender = gender;
     }
     
-    public int getAge() {
-        return age;
+    public LocalDate getBirthDay() {
+        return birthDay;
     }
     
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDay(LocalDate birthDay) {
+        this.birthDay = birthDay;
     }
+    
     
     public String getPhone() {
         return phone;
@@ -70,7 +72,7 @@ public class Person extends Record {
         return tmp + ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gender='" + gender + '\'' +
-                ", age='" + age + '\'' +
+                ", birthday='" + birthDay + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'';
     }
@@ -80,7 +82,7 @@ public class Person extends Record {
         firstName = InputUtils.askString("First name");
         lastName = InputUtils.askString("Last name");
         gender = InputUtils.askString("Gender");
-        age = InputUtils.askNumber("Age", 5, 100);
+        birthDay = InputUtils.askDate("Birthday");
         email = InputUtils.askString("Email");
         phone = InputUtils.askString("Phone");
     }
@@ -92,7 +94,7 @@ public class Person extends Record {
                 || firstName.toLowerCase().contains(substr)
                 || lastName.toLowerCase().contains(substr)
                 || gender.toLowerCase().contains(substr)
-                || Integer.toString(age).contains(substr)
+                || InputUtils.getStrDate(birthDay).contains(substr)
                 || email.toLowerCase().contains(substr)
                 || phone.toLowerCase().contains(substr);
     }

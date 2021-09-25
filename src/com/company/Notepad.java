@@ -1,12 +1,17 @@
 package com.company;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Notepad {
     private final List<Record> records = new ArrayList<>();
-
+    static final File recordsFile = new File("Records.txt");
+    
+    
     public void createRecord(RecordType type) {
         var rec = type.create();
         rec.askData();
@@ -21,6 +26,23 @@ public class Notepad {
     }
     
     public void readFile() {
+        if (! recordsFile.exists()) {
+            System.out.println("File not exist");
+            return;
+        }
+    
+        try (var in = new Scanner(recordsFile)) {
+        
+            while (in.hasNext()) {
+    
+//                records.addAll(records);
+            
+            }
+        
+        } catch (IOException e) {
+            System.out.println("Sorry, cannot read file Records.txt");
+        }
+    
     
     }
     
